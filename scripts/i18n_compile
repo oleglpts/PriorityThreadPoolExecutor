@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# example: i18n_compile simple_daemon ru
+
+msgfmt ../locale/$2/LC_MESSAGES/$1.pot -o ../locale/$2/LC_MESSAGES/$1.mo

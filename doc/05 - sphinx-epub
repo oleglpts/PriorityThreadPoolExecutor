@@ -1,0 +1,13 @@
+#!/bin/bash
+
+pwd=`pwd`
+cd ..
+project=`pwd`
+cd venv
+source bin/activate
+PYTHONPATH=$project:$pwd
+export PYTHONPATH
+echo $PYTHONPATH
+cd $pwd
+make epub
+deactivate

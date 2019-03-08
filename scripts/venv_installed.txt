@@ -1,0 +1,6 @@
+Package       Version
+------------- -------
+pip           10.0.1 
+pkg-resources 0.0.0  
+setuptools    39.1.0 
+wheel         0.33.1 

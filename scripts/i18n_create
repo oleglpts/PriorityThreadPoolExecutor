@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# example: ./i18n_create simple_daemon ru
+
+CURRENT_DIR=`pwd`
+
+cd ../venv
+source bin/activate
+cd ..
+mkdir locale
+cd locale
+mkdir $2
+cd $2
+mkdir LC_MESSAGES
+cd $CURRENT_DIR/..
+pygettext -a -v -d $1 -p locale/$2/LC_MESSAGES/ examples/*.py easy_daemon/*.py
+cat locale/$2/LC_MESSAGES/$1.pot | sed 's/charset=CHARSET/charset=UTF-8/' > locale/$2/LC_MESSAGES/$1.pot_copy
+mv locale/$2/LC_MESSAGES/$1.pot_copy locale/$2/LC_MESSAGES/$1.pot
+deactivate

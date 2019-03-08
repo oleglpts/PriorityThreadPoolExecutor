@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd venv
+source bin/activate
+echo -ne "\n"
+pip list --format=columns > ../venv_installed.txt
+../list2req.py ../venv_installed.txt ../venv_requirements.txt
+deactivate

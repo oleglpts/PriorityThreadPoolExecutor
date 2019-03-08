@@ -1,0 +1,9 @@
+#!/bin/bash
+
+pwd=`pwd`
+cd ../venv
+source bin/activate
+cd $pwd
+rm -rf ./source/*
+sphinx-apidoc -o source/ ../
+deactivate

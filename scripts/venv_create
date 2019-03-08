@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd ..
+rm -rf venv
+mkdir venv
+virtualenv --python=python3.5 venv
+cd venv
+source bin/activate
+echo -ne "\n"
+pip install -U -r ../scripts/venv_requirements.txt
+echo -ne "\n"
+pip list --format=columns > ../scripts/venv_installed.txt
+deactivate
+cd ../scripts
